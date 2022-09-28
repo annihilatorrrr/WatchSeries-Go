@@ -8,243 +8,277 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body class="bg-white dark:bg-gray-900 container mx-auto">
+<body class="dark:bg-gray-900 container mx-auto">
 
-  
-
-  <!-- Documentation Header -->
-  <section class="bg-white dark:bg-gray-900">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-      <div class="mx-auto max-w-screen-sm text-center">
-        <h1 class="mb-4 text-6xl tracking-tight font-extrabold lg:text-9xl text-blue-600 dark:text-blue-500">
-          API</h1>
-        <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">Documentation</p>
-        <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">This is the API documentation for the
-          <a href="https://api.roseloverx.com" class="text-blue-600 dark:text-blue-500">RoseAPI</a>. You can use this
-          API for various purposes, such as getting information from google, etc
-          <br>More Endpoints will be added in the future.
-        </p>
+  <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
+      <a href="https://api.roseloverx.com" class="flex items-center">
+        <img
+          src="https://img.icons8.com/external-vitaliy-gorbachev-blue-vitaly-gorbachev/60/000000/external-rose-japanese-wedding-vitaliy-gorbachev-blue-vitaly-gorbachev.png"
+          class="mr-3 h-6 sm:h-9" alt="roseAPI Logo">
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">RoseAPI</span>
+      </a>
+      <div class="flex items-center">
+        <a href="t.me/roseloverx"
+          class="mr-6 text-sm font-medium text-gray-500 dark:text-white hover:underline">(Contact)</a>
+        <a href="#" class="text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline">Login</a>
       </div>
     </div>
-    
+  </nav>
+  <nav class="bg-gray-50 dark:bg-gray-700">
+    <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
+      <div class="flex items-center">
+        <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
+          <li>
+            <a href="https://roseloverx.com" class="text-gray-900 dark:text-white hover:underline">Home</a>
+          </li>
+          <li>
+            <a href="/" class="text-blue-700 dark:text-white hover:underline" aria-current="page">Docs</a>
+          </li>
+          <li>
+            <a href="/404.html" class="text-gray-900 dark:text-white hover:underline">Endpoints</a>
+          </li>
+          <li>
+            <a href="https://cdn.roseloverx.com" class="text-gray-900 dark:text-white hover:underline">Cdn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section class="border-t border-gray-200 dark:border-gray-800 bg-white flex flex-col dark:bg-gray-900">
+    <div
+      class="mt-4 mb-4 p-4 w-full text-center bg-white rounded-lg sm:border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <h5 class="antialiased text-3xl tracking-tight font-extrabold lg:text-9xl text-red-600 dark:text-red-500">API
+        DOCUMENTATION</h5>
+      <p class="py-3 text-base leading-7 text-gray-600">This is the API documentation for the
+        <a href="https://api.roseloverx.com" class="font-bold text-blue-600 dark:text-blue-500">RoseAPI</a>. You can use
+        this
+        API for various purposes, such as getting information from google, etc
+        <br>More Endpoints will be added in the future.
+      </p>
+    </div>
+    <div class="shadow-xl overflow-x-auto relative shadow-md sm:rounded-lg">
+      <div class="flex justify-between items-center pb-4 bg-white dark:bg-gray-900">
+        <div class="p-2 flex items-center">
+          <input id="link-checkbox" type="checkbox" value=""
+            class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="link-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the
+            <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">terms and conditions</a>.</label>
+        </div>
+        <label for="table-search" class="sr-only">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <input type="text" id="table-search-users"
+            class="block p-2 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Search for Endpoints">
+        </div>
+      </div>
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+            <th scope="col" class="p-4">
+              <div class="flex items-center">
+                <input id="checkbox-all-search" type="checkbox"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="checkbox-all-search" class="sr-only">checkbox</label>
+              </div>
+            </th>
+            <th scope="col" class="py-3 px-6">
+              <div class="flex items-center">
+                <span>Endpoint</span>
+              </div>
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Method
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Status
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Action
+            </th>
+            <th scope="col" class="py-3 px-6">
+              Latency
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <td class="p-4 w-4">
+              <div class="flex items-center">
+                1.
+              </div>
+            </td>
+            <th scope="row" class="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+              <img class="w-10 h-10 rounded-full"
+                src="https://ia.media-imdb.com/images/M/MV5BMTczNjM0NDY0Ml5BMl5BcG5nXkFtZTgwMTk1MzQ2OTE@._V1_.png"
+                alt="imdb">
+              <div class="pl-3">
+                <div class="text-base font-semibold">iMDB</div>
+                <div class="font-normal text-gray-500">search for movies/tv shows</div>
+              </div>
+            </th>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-blue-500 dark:text-white">GET</span>
+            </td>
+            <td class="py-4 px-6">
+              <div class="flex items-center">
+                <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
+              </div>
+            </td>
+            <td class="py-4 px-6">
+              <a href="/api/imdb?query=avengers"
+                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Try
+                it</a>
+            </td>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400" id="imdb-latency">0ms</span>
+            </td>
+          </tr>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <td class="p-4 w-4">
+              <div class="flex items-center">
+                2.
+              </div>
+            </td>
+            <th scope="row"
+              class="flex items-center py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <img class="w-10 h-10 rounded-full" src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                alt="Jese image">
+              <div class="pl-3">
+                <div class="text-base font-semibold">YouTube</div>
+                <div class="font-normal text-gray-500">search for videos and channels</div>
+              </div>
+            </th>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-blue-500 dark:text-white">GET</span>
+            </td>
+            <td class="py-4 px-6">
+              <div class="flex items-center">
+                <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
+              </div>
+            </td>
+            <td class="py-4 px-6">
+              <a href="/api/youtube?q=vaaste" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Try
+                it</a>
+            </td>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400" id="youtube-latency">0ms</span>
+            </td>
+          </tr>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <td class="p-4 w-4">
+              <div class="flex items-center">
+                3.
+              </div>
+            </td>
+            <th scope="row"
+              class="flex items-center py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <img class="w-10 h-10 rounded-full" src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
+                alt="Jese image">
+              <div class="pl-3">
+                <div class="text-base font-semibold">Google</div>
+                <div class="font-normal text-gray-500">search for anything on google</div>
+              </div>
+            </th>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-blue-500 dark:text-white">GET</span>
+            </td>
+            <td class="py-4 px-6">
+              <div class="flex items-center">
+                <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
+              </div>
+            </td>
+            <td class="py-4 px-6">
+              <a href="/api/google?q=hacktoberfest"
+                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Try it</a>
+            </td>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400" id="google-latency">0ms</span>
+            </td>
+          </tr>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <td class="p-4 w-4">
+              <div class="flex items-center">
+                4.
+              </div>
+            </td>
+            <th scope="row"
+              class="flex items-center py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <img class="w-10 h-10 rounded-full"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRR7nDVNKxQ0QmYBqY0ka0mHTzQ1OsAhfpg&usqp=CAU"
+                alt="Jese image">
+              <div class="pl-3">
+                <div class="text-base font-semibold">Web ScreenShot</div>
+                <div class="font-normal text-gray-500">Take a screenshot of any website</div>
+              </div>
+            </th>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-red-500 dark:text-white">POST</span>
+            </td>
+            <td class="py-4 px-6">
+              <div class="flex items-center">
+                <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
+              </div>
+            </td>
+            <td class="py-4 px-6">
+              <a href="/api/screenshot?url=https://google.com"
+                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Try it</a>
+            </td>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400" id="screenshot-latency">0ms</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
-
-
-  <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
-    <div class="flex justify-between items-center pb-4 bg-white dark:bg-gray-900">
-
-      <label for="table-search" class="sr-only">Search</label>
-      <div class="relative">
-        <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor"
-            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </div>
-        <input type="text" id="table-search-users"
-          class="block p-2 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Search for Endpoints">
-      </div>
-    </div>
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-        <tr>
-          <th scope="col" class="p-4">
-            <div class="flex items-center">
-              <input id="checkbox-all-search" type="checkbox"
-                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="checkbox-all-search" class="sr-only">checkbox</label>
-            </div>
-          </th>
-          <th scope="col" class="py-3 px-6">
-            <div class="flex items-center">
-              <span>Endpoint</span>
-            </div>
-          </th>
-          <th scope="col" class="py-3 px-6">
-            Method
-          </th>
-          <th scope="col" class="py-3 px-6">
-            Status
-          </th>
-          <th scope="col" class="py-3 px-6">
-            Action
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-          <td class="p-4 w-4">
-            <div class="flex items-center">
-              <input id="checkbox-table-search-1" type="checkbox"
-                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-            </div>
-          </td>
-          <th scope="row" class="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-            <img class="w-10 h-10 rounded-full"
-              src="https://ia.media-imdb.com/images/M/MV5BMTczNjM0NDY0Ml5BMl5BcG5nXkFtZTgwMTk1MzQ2OTE@._V1_.png"
-              alt="imdb">
-            <div class="pl-3">
-              <div class="text-base font-semibold">iMDB</div>
-              <div class="font-normal text-gray-500">search for movies/tv shows</div>
-            </div>
-          </th>
-          <td class="py-4 px-6">
-            <span class="text-sm font-medium text-blue-500 dark:text-white">GET</span>
-          </td>
-          <td class="py-4 px-6">
-            <div class="flex items-center">
-              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
-            </div>
-          </td>
-          <td class="py-4 px-6">
-            <a href="/api/imdb?query=avengers" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Try it</a>
-          </td>
-        </tr>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-          <td class="p-4 w-4">
-            <div class="flex items-center">
-              <input id="checkbox-table-search-2" type="checkbox"
-                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
-            </div>
-          </td>
-          <th scope="row"
-            class="flex items-center py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            <img class="w-10 h-10 rounded-full" src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
-              alt="Jese image">
-            <div class="pl-3">
-              <div class="text-base font-semibold">YouTube</div>
-              <div class="font-normal text-gray-500">search for videos and channels</div>
-            </div>
-          </th>
-          <td class="py-4 px-6">
-            <span class="text-sm font-medium text-blue-500 dark:text-white">GET</span>
-          </td>
-          <td class="py-4 px-6">
-            <div class="flex items-center">
-              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
-            </div>
-          </td>
-          <td class="py-4 px-6">
-            <a href="/api/youtube?q=vaaste" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Try it</a>
-          </td>
-        </tr>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-          <td class="p-4 w-4">
-            <div class="flex items-center">
-              <input id="checkbox-table-search-2" type="checkbox"
-                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
-            </div>
-          </td>
-          <th scope="row"
-            class="flex items-center py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            <img class="w-10 h-10 rounded-full" src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png"
-              alt="Jese image">
-            <div class="pl-3">
-              <div class="text-base font-semibold">Google</div>
-              <div class="font-normal text-gray-500">search for anything on google</div>
-            </div>
-          </th>
-          <td class="py-4 px-6">
-            <span class="text-sm font-medium text-blue-500 dark:text-white">GET</span>
-          </td>
-          <td class="py-4 px-6">
-            <div class="flex items-center">
-              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
-            </div>
-          </td>
-          <td class="py-4 px-6">
-            <a href="/api/google?q=hacktoberfest" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Try it</a>
-          </td>
-        </tr>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-          <td class="p-4 w-4">
-            <div class="flex items-center">
-              <input id="checkbox-table-search-2" type="checkbox"
-                class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <label for="checkbox-table-search-2" class="sr-only">checkbox</label>
-            </div>
-          </td>
-          <th scope="row"
-            class="flex items-center py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            <img class="w-10 h-10 rounded-full"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRR7nDVNKxQ0QmYBqY0ka0mHTzQ1OsAhfpg&usqp=CAU"
-              alt="Jese image">
-            <div class="pl-3">
-              <div class="text-base font-semibold">Web ScreenShot</div>
-              <div class="font-normal text-gray-500">Take a screenshot of any website</div>
-            </div>
-          </th>
-          <td class="py-4 px-6">
-            <span class="text-sm font-medium text-red-500 dark:text-white">POST</span>
-          </td>
-          <td class="py-4 px-6">
-            <div class="flex items-center">
-              <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
-            </div>
-          </td>
-          <td class="py-4 px-6">
-            <a href="/api/screenshot?url=https://google.com" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Try it</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-
-  <footer
-    class="flex justify-between items-center py-4 px-6 bg-white border-t border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-    <div class="flex items-center">
-      <button
-        class="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-        aria-label="Previous">
-        <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 7a1 1 0 011.293-.707l4 4a1 1 0 010 1.414l-4 4A1 1 0 117 13l4-4-4-4z" clip-rule="evenodd"
-            fill-rule="evenodd"></path>
-        </svg>
-      </button>
-      <span class="text-sm font-medium text-gray-700 dark:text-gray-300 mx-2">1</span>
-      <button
-        class="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-        aria-label="Next">
-        <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 7a1 1 0 00-1.293.707l-4 4a1 1 0 000 1.414l4 4A1 1 0 1013 13l-4-4 4-4z" clip-rule="evenodd"
-            fill-rule="evenodd"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="flex items-center">
-      <button
-        class="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-        aria-label="Previous">
-        <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 7a1 1 0 011.293-.707l4 4a1 1 0 010 1.414l-4 4A1 1 0 117 13l4-4-4-4z" clip-rule="evenodd"
-            fill-rule="evenodd"></path>
-        </svg>
-      </button>
-      <span class="text-sm font-medium text-gray-700 dark:text-gray-300 mx-2">1</span>
-      <button
-        class="text-gray-600 dark:text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-        aria-label="Next">
-        <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg">
-          <path d="M13 7a1 1 0 00-1.293.707l-4 4a1 1 0 000 1.414l4 4A1 1 0 1013 13l-4-4 4-4z" clip-rule="evenodd"
-            fill-rule="evenodd"></path>
-        </svg>
-      </button>
+  <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
+    <div class="mx-auto max-w-screen-xl text-center">
+      <a href="#" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
+        <img
+          src="https://img.icons8.com/external-vitaliy-gorbachev-blue-vitaly-gorbachev/60/000000/external-rose-japanese-wedding-vitaliy-gorbachev-blue-vitaly-gorbachev.png"
+          class="mr-3 h-6 sm:h-9" alt="RoseAPI Logo">
+        RoseAPI
+      </a>
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2021-2022 <a href="#"
+          class="hover:underline">RoseLoverX™</a>. All Rights Reserved.</span>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.2/dist/flowbite.js"></script>
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- get latency of all endpoints -->
+  <script>
+    $(document).ready(function () {
+      var endpoints = [{ "imdb": "/api/imdb?q=avengers" }, { "screenshot": "/api/screenshot?url=https://google.com" }, { "youtube": "/api/youtube?q=vaaste" }, { "google": "/api/google?q=hacktoberfest" }];
+      endpoints.forEach(function (endpoint) {
+        var key = Object.keys(endpoint)[0]
+        var value = endpoint[key]
+        startTime = new Date().getTime()
+        $.ajax({
+          url: window.location.origin + value,
+          type: 'GET',
+          success: function (data) {
+            endTime = new Date().getTime()
+            var latency = endTime - startTime
+            console.log(latency)
+            var latencyElement = document.getElementById(key + "-latency")
+            latencyElement.innerHTML = latency + "ms"
+          }
+        })
+      })
+    })
+  </script>
 </body>
 
 </html>
