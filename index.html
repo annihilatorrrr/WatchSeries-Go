@@ -236,6 +236,38 @@
               <span class="text-sm font-medium text-gray-500 dark:text-gray-400" id="screenshot-latency">0ms</span>
             </td>
           </tr>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <td class="p-4 w-4">
+              <div class="flex items-center">
+                5.
+              </div>
+            </td>
+            <th scope="row"
+              class="flex items-center py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <img class="w-10 h-10 rounded-full"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Musixmatch_logo_icon_only.svg/480px-Musixmatch_logo_icon_only.svg.png"
+                alt="Jese image">
+              <div class="pl-3">
+                <div class="text-base font-semibold">MusixMatch</div>
+                <div class="font-normal text-gray-500">Get lyrics of any song</div>
+              </div>
+            </th>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-blue-500 dark:text-white">GET</span>
+            </td>
+            <td class="py-4 px-6">
+              <div class="flex items-center">
+                <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
+              </div>
+            </td>
+            <td class="py-4 px-6">
+              <a href="/api/lyrics?q=vaaste"
+                class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Try it</a>
+            </td>
+            <td class="py-4 px-6">
+              <span class="text-sm font-medium text-gray-500 dark:text-gray-400" id="lyrics-latency">0ms</span>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -260,7 +292,7 @@
   <!-- get latency of all endpoints -->
   <script>
     $(document).ready(function () {
-      var endpoints = [{ "imdb": "/api/imdb?q=avengers" }, { "screenshot": "/api/screenshot?url=https://google.com" }, { "youtube": "/api/youtube?q=vaaste" }, { "google": "/api/google?q=hacktoberfest" }];
+      var endpoints = [{ "imdb": "/api/imdb?query=avengers" }, { "screenshot": "/api/screenshot?url=https://google.com" }, { "youtube": "/api/youtube?q=vaaste" }, { "google": "/api/google?q=hacktoberfest" }, { "lyrics": "/api/lyrics?q=vaaste" }];
       endpoints.forEach(function (endpoint) {
         var key = Object.keys(endpoint)[0]
         var value = endpoint[key]
